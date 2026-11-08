@@ -1,0 +1,29 @@
+name: Deploy to Fly.io
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+concurrency:
+  group: fly-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ vars.FLY_DEPLOY_ENABLED == 'true' || github.event_name == 'workflow_dispatch' }}
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Create the Fly app on first run
+        run: |
+          APP=$(grep -E '^app *=' fly.toml | sed -E 's/.*"(.*)".*/\1/')
+          flyctl status --app "$APP" >/dev/null 2>&1 || flyctl apps create "$APP"
+      - name: Deploy
+        run: |
+          flyctl deploy --remote-only \
+            --build-arg GOOGLE_MAPS_API_KEY="${{ secrets.GOOGLE_MAPS_API_KEY }}" \
+            --build-arg CESIUM_ION_TOKEN="${{ secrets.CESIUM_ION_TOKEN }}"
