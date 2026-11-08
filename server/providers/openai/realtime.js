@@ -1,4 +1,5 @@
 import { enforceRateLimit, openAiRateLimiter } from './rate-limit.js';
+import { requestProtocol } from '../common/trusted-proxy.js';
 import {
   resolveVoiceModel,
   isKnownVoiceTier,
@@ -32,7 +33,7 @@ function isSameOriginRequest(req) {
   if (!origin) return true;
   const host = String(req.headers?.host || '').trim();
   if (!host) return false;
-  const protocol = req.socket?.encrypted ? 'https:' : 'http:';
+  const protocol = requestProtocol(req);
   try {
     return new URL(origin).origin === new URL(`${protocol}//${host}`).origin;
   } catch {

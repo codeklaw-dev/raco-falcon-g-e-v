@@ -144,8 +144,10 @@ test('root config retains existing named exports and standalone provider order',
   for (const [name, value] of Object.entries(providers))
     assert.equal(compatibility[name], value, name);
   const config = standaloneConfig({ mode: 'test' }, { nominatimStorageDir });
+  // The site password gate runs before every provider so it covers them all.
+  assert.equal(config.plugins[4].name, 'gev-site-password');
   const standaloneProviders = config.plugins
-    .slice(4, -6)
+    .slice(5, -6)
     .map((plugin) => plugin.name);
   assert.equal(
     standaloneProviders.filter((name) => name === 'gemini-live-proxy').length,

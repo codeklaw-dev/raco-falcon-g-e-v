@@ -28,6 +28,19 @@ Run the **Deploy to Fly.io** workflow (Actions tab → Run workflow), or locally
 fly deploy --build-arg GOOGLE_MAPS_API_KEY=... --build-arg CESIUM_ION_TOKEN=...
 ```
 
+## Password and AI features
+
+Chat, voice and place search spend your API keys, so on a hosted deployment
+they only work behind a site password:
+
+```bash
+fly secrets set GEV_SITE_PASSWORD='choose-a-long-password' -a raco-falcon-g-e-v
+```
+
+The browser then asks for it once (any username). `fly.toml` already sets
+`GEV_TRUST_PROXY=1`, which lets those routes work behind Fly's proxy only while
+the password is set. The health check uses `/healthz`, which stays open.
+
 ## Before sharing the URL
 
 The server proxies your paid API keys to anyone who can reach it. Put
