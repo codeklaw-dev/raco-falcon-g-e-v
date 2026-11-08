@@ -7,7 +7,7 @@ server. Config lives in `fly.toml`.
 ## One-time setup
 
 1. Create a Fly.io account and install `flyctl` (https://fly.io/docs/flyctl/install/).
-2. If `raco-falcon-gev` is taken, change `app` and `GEV_ALLOWED_HOSTS` in `fly.toml`.
+2. If `raco-falcon-g-e-v` is taken, change `app` and `GEV_ALLOWED_HOSTS` in `fly.toml`.
 3. Create a deploy token: `fly tokens create org` (or `fly auth token`).
 4. In GitHub → Settings → Secrets and variables → Actions, add:
    - `FLY_API_TOKEN` (required)

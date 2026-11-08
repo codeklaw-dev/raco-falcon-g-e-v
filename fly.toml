@@ -1,7 +1,7 @@
 # Fly.io config. Rename `app` before the first deploy if the name is taken
 # (Fly app names are global), and update GEV_ALLOWED_HOSTS to match.
-app = "raco-falcon-gev"
-primary_region = "iad"
+app = "raco-falcon-g-e-v"
+primary_region = "ams"
 
 [build]
   dockerfile = "Dockerfile.fly"
@@ -11,12 +11,13 @@ primary_region = "iad"
   PORT = "8080"
   # The server rejects any Host header not on this list (build/allowedHosts.js).
   # Add custom domains here, comma-separated.
-  GEV_ALLOWED_HOSTS = "raco-falcon-gev.fly.dev"
+  GEV_ALLOWED_HOSTS = "raco-falcon-g-e-v.fly.dev"
 
 [http_service]
   internal_port = 8080
   force_https = true
   auto_stop_machines = "stop"
+  processes = ["app"]
   auto_start_machines = true
   min_machines_running = 0
 
