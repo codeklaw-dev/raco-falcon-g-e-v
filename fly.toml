@@ -12,6 +12,10 @@ primary_region = "ams"
   # The server rejects any Host header not on this list (build/allowedHosts.js).
   # Add custom domains here, comma-separated.
   GEV_ALLOWED_HOSTS = "raco-falcon-g-e-v.fly.dev"
+  # Let chat, voice and place search work behind Fly's proxy. Honoured ONLY
+  # when the GEV_SITE_PASSWORD secret is also set; until then those routes
+  # stay locked (see server/providers/common/trusted-proxy.js).
+  GEV_TRUST_PROXY = "1"
 
 [http_service]
   internal_port = 8080
@@ -26,7 +30,7 @@ primary_region = "ams"
     interval = "30s"
     timeout = "10s"
     method = "GET"
-    path = "/"
+    path = "/healthz"
 
 [[vm]]
   memory = "1gb"

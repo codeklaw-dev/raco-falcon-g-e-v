@@ -1,4 +1,5 @@
 import { admitSameSiteRequest } from '../../../src/localRequestGate.mjs';
+import { gateProxyHeaders, requestProtocol } from './trusted-proxy.js';
 
 /**
  * Cross-site request gate for cost-bearing and log endpoints. Feeds the
@@ -15,10 +16,10 @@ import { admitSameSiteRequest } from '../../../src/localRequestGate.mjs';
 export function admitSameSite(req, res) {
   const verdict = admitSameSiteRequest({
     hostHeader: req.headers?.host,
-    protocol: req.socket?.encrypted ? 'https:' : 'http:',
+    protocol: requestProtocol(req),
     origin: req.headers?.origin,
     secFetchSite: req.headers?.['sec-fetch-site'],
-    proxyHeaders: req.headers || {},
+    proxyHeaders: gateProxyHeaders(req),
   });
   if (verdict.ok) return false;
   res.statusCode = verdict.status;

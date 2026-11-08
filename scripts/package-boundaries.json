@@ -217,6 +217,7 @@
       "server/providers/acartia.js",
       "server/providers/common/rate-limit.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "server/providers/common/userAgent.js",
       "server/providers/inaturalist/client.js",
       "server/providers/inaturalist/observations.js",
@@ -252,6 +253,7 @@
       "scripts/google-server-key.mjs",
       "src/data/placeProviderPayloads.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs",
       "src/data/routeSteps.js",
       "src/sources/httpBody.js",
@@ -272,6 +274,7 @@
       "server/providers/space.js",
       "server/providers/space/celestrak.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs",
       "server/providers/space/cooldown.js",
       "server/providers/space/launch-library.js",
@@ -296,6 +299,7 @@
       "server/providers/common/rate-limit.js",
       "src/sources/rateLimit.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs"
     ],
     "external": []
@@ -315,6 +319,7 @@
       "src/i18n/marker.js",
       "src/data/tomtomTiles.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs"
     ],
     "external": []
@@ -366,6 +371,7 @@
     "modules": [
       "server/providers/cctv.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs",
       "server/providers/cctv/cap.js",
       "server/providers/cctv/groundHeights.js",
@@ -401,6 +407,7 @@
       "server/providers/mapillary/tiles.js",
       "server/providers/mapillary/trim.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs",
       "server/providers/common/rate-limit.js",
       "src/sources/rateLimit.js",
@@ -437,6 +444,7 @@
       "server/providers/common/rate-limit.js",
       "server/providers/common/request.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "server/providers/overpass.js",
       "server/providers/overpass/cache.js",
       "server/providers/overpass/constants.js",
@@ -476,6 +484,7 @@
       "src/i18n/marker.js",
       "src/sources/rateLimit.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs"
     ],
     "external": []
@@ -507,6 +516,7 @@
       "src/data/bundledJson.js",
       "src/data/retryableLoad.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "server/providers/common/source-root.js",
       "server/providers/regional/nominatimGate.js",
       "server/providers/regional/nominatimCache.js",
@@ -553,6 +563,7 @@
       "src/data/installationFeedback.js",
       "src/voice/voiceCost.js",
       "server/providers/common/same-site.js",
+      "server/providers/common/trusted-proxy.js",
       "src/localRequestGate.mjs",
       "src/voice/actionSchemas.js",
       "src/voice/areaCandidateContract.js",
