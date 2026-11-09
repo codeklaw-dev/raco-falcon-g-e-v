@@ -10,6 +10,7 @@ import CockpitView from './CockpitView.vue';
 import SceneChromeView from './SceneChromeView.vue';
 import ProviderSettingsView from './ProviderSettingsView.vue';
 import IntelHudView from './IntelHudView.vue';
+import ShellNewView from '../shellNew/ShellNewView.vue';
 
 /**
  * Application views by name. A page places each one with a host element,
@@ -26,6 +27,8 @@ export const APPLICATION_VIEWS = Object.freeze({
   context: ContextView,
   welcome: WelcomeView,
   'intel-hud': IntelHudView,
+  // The redesigned shell's chrome; renders nothing on the classic shell.
+  'shell-new': ShellNewView,
 });
 
 const mounted = new WeakMap();
