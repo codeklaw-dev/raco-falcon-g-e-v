@@ -213,7 +213,9 @@
     "ΔN",
     "Ⅱ PAUSE",
     "≥ {value} MW",
-    "▲ {frp} MW"
+    "▲ {frp} MW",
+    "Standard",
+    "Mono"
   ],
   "es": [
     "1090 MHz",
@@ -352,7 +354,8 @@
     "Reptiles",
     "acartia.io ↗",
     "iNaturalist ↗",
-    "iNaturalist"
+    "iNaturalist",
+    "Mono"
   ],
   "fr": [
     "1090 MHz",
@@ -546,7 +549,9 @@
     "ΔN",
     "Ⅱ PAUSE",
     "≥ {value} MW",
-    "▲ {frp} MW"
+    "▲ {frp} MW",
+    "Standard",
+    "Mono"
   ],
   "it": [
     "1090 MHz",
@@ -726,7 +731,9 @@
     "CC BY 4.0",
     "acartia.io ↗",
     "iNaturalist ↗",
-    "iNaturalist"
+    "iNaturalist",
+    "Standard",
+    "Mono"
   ],
   "ja": [
     "1090 MHz",
@@ -920,7 +927,8 @@
     "CC BY 4.0",
     "acartia.io ↗",
     "iNaturalist ↗",
-    "iNaturalist"
+    "iNaturalist",
+    "Mono"
   ],
   "ru": [
     "AIS: --",

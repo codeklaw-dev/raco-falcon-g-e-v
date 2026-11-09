@@ -19,8 +19,18 @@
     "exports": ["./application"],
     "modules": [
       "src/app/application.js",
+      "src/ui/stores/panels.js",
       "src/ui/vueRuntime.js",
       "src/ui/views/index.js",
+      "src/ui/shellVariant.js",
+      "src/ui/shellNew/ShellNewView.vue",
+      "src/ui/shellNew/NavRail.vue",
+      "src/ui/shellNew/PaneChrome.vue",
+      "src/ui/shellNew/TopNotch.vue",
+      "src/ui/shellNew/LayerRowsNew.vue",
+      "src/ui/shellNew/motion.js",
+      "src/ui/shellNew/icons.js",
+      "src/ui/shellNew/shell.css",
       "src/ui/views/CockpitView.vue",
       "src/ui/views/CommandDockView.vue",
       "src/ui/views/ContextView.vue",
@@ -161,7 +171,7 @@
       "src/ui/views/panels/WorldTimeline.vue",
       "src/ui/surfaceKeyboard.js"
     ],
-    "external": ["vue", "pinia", "vue-i18n"]
+    "external": ["vue", "pinia", "vue-i18n", "gsap", "@lucide/vue"]
   },
   "time": {
     "exports": ["./time"],
@@ -718,6 +728,9 @@
     "exports": ["./ui/layers", "./ui/layers/feedback"],
     "modules": [
       "src/i18n/marker.js",
+      "src/ui/shellNew/LayerRowsNew.vue",
+      "src/ui/shellNew/icons.js",
+      "src/ui/shellVariant.js",
       "src/ui/layers.js",
       "src/ui/layerPanel.js",
       "src/ui/layerNames.js",
@@ -771,7 +784,7 @@
       "src/ui/kit/UiSlider.js",
       "src/ui/kit/UiSegmented.vue"
     ],
-    "external": ["vue"]
+    "external": ["vue", "@lucide/vue"]
   },
   "location-controls": {
     "exports": ["./ui/location"],
@@ -975,6 +988,9 @@
     "exports": ["./ui/shell"],
     "modules": [
       "src/data/headingDegrees.js",
+      "src/ui/shellNew/LayerRowsNew.vue",
+      "src/ui/shellNew/icons.js",
+      "src/ui/shellVariant.js",
       "src/data/distanceFormat.js",
       "src/i18n/marker.js",
       "src/ui/mobileShell.js",
@@ -1209,7 +1225,7 @@
       "src/overlays/worldOverlayChrome.js",
       "src/layers/wildlifeSightings/photoText.js"
     ],
-    "external": ["cesium", "vue", "pinia", "vue-i18n"]
+    "external": ["cesium", "vue", "pinia", "vue-i18n", "@lucide/vue"]
   },
   "ui-styles": {
     "exports": ["./ui/styles"],
@@ -2334,6 +2350,9 @@
     ],
     "modules": [
       "src/sources/adsbFields.js",
+      "src/ui/shellNew/LayerRowsNew.vue",
+      "src/ui/shellNew/icons.js",
+      "src/ui/shellVariant.js",
       "src/data/headingDegrees.js",
       "src/data/distanceFormat.js",
       "src/ui/placeNames.js",
@@ -3374,7 +3393,8 @@
       "@jtarrio/webrtlsdr",
       "vue",
       "pinia",
-      "vue-i18n"
+      "vue-i18n",
+      "@lucide/vue"
     ]
   },
   "application-catalog": {

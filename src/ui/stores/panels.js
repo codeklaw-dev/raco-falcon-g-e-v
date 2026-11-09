@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { reactive } from 'vue';
+import { reactive, shallowRef } from 'vue';
 
 /**
  * @typedef {object} RailPanel
@@ -53,5 +53,21 @@ export const usePanelStore = defineStore('gev-panels', () => {
     );
   }
 
-  return { sides, setSide, openPanelId, isOpen };
+  /** PanelNavigation's selection, so any view can open or close a panel. */
+  const selector = shallowRef(null);
+
+  /** @param {?Function} next `select(panelId)`, or null to disconnect. */
+  function connectSelect(next) {
+    selector.value = typeof next === 'function' ? next : null;
+  }
+
+  /**
+   * Toggle a panel as its rail item would. No-op until navigation connects.
+   * @param {string} id Panel id.
+   */
+  function select(id) {
+    selector.value?.(id);
+  }
+
+  return { sides, setSide, openPanelId, isOpen, connectSelect, select };
 });

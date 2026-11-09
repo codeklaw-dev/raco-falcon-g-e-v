@@ -1,4 +1,8 @@
+import { applyShellVariant } from './ui/shellVariant.js';
 import { createStandaloneApplication } from './standalone/application.js';
+
+// Before any view mounts: the shell variant styles and lays out every view.
+applyShellVariant();
 import { describeError } from './standalone/errors.js';
 import { t } from './i18n/index.js';
 

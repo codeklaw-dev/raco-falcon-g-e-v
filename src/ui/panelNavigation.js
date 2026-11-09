@@ -43,6 +43,7 @@ export class PanelNavigation {
         }),
       );
     }
+    this._store.connectSelect((panelId) => this.select(panelId));
     if (typeof MutationObserver !== 'undefined') {
       // Only the panels themselves matter: their order, disclosure and
       // availability, not changes inside them or inside the rails.
@@ -117,6 +118,7 @@ export class PanelNavigation {
   destroy() {
     if (this._destroyed) return;
     this._destroyed = true;
+    this._store.connectSelect(null);
     this._observer?.disconnect();
     this._observer = null;
     for (const unmount of this._unmounts) unmount();

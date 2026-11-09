@@ -1,5 +1,7 @@
 import { h, render as renderVue } from 'vue';
 import LayerRows from './layerPanel/LayerRows.vue';
+import LayerRowsNew from './shellNew/LayerRowsNew.vue';
+import { isNewShell } from './shellVariant.js';
 import { layerFeedState } from '../data/feedState.js';
 export { layerFeedState } from '../data/feedState.js';
 import { GUIDANCE_STATUSES } from '../loadingFeedback.js';
@@ -437,9 +439,10 @@ export class LayerPanel {
       if (item) lists.get(row.container ?? null).push(item);
     }
     const generation = this._generation;
+    const Rows = isNewShell() ? LayerRowsNew : LayerRows;
     for (const [id, items] of lists)
       renderVue(
-        h(LayerRows, {
+        h(Rows, {
           items,
           onToggle: (layerId) => this._toggle(layerId, generation),
           onChip: (layerId, chipId) =>

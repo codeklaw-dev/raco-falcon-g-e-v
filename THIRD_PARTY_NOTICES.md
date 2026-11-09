@@ -45,3 +45,19 @@ Street Level viewer; the complete resolved dependency inventory remains in
 - Source: <https://github.com/mrdoob/three.js>
 - License: MIT
 - License text: <https://github.com/mrdoob/three.js/blob/dev/LICENSE>
+
+## GSAP
+
+- Package: `gsap` 3.15.0 (animations in the redesigned shell, `?ui=new`)
+- Author: GreenSock, Inc. (Webflow)
+- Source: <https://gsap.com>
+- License: GSAP Standard "No Charge" License
+- License text: <https://gsap.com/standard-license>
+
+## Lucide
+
+- Package: `@lucide/vue` 1.61.0 (icons in the redesigned shell, `?ui=new`)
+- Author: Lucide Contributors
+- Source: <https://github.com/lucide-icons/lucide>
+- License: ISC
+- License text: <https://github.com/lucide-icons/lucide/blob/main/LICENSE>
